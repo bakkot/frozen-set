@@ -12,5 +12,8 @@
     "structures"
   ],
   "author": "bakkot",
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "dependencies": {
+    "hidden-state": "^1.0.0"
+  }
 }
