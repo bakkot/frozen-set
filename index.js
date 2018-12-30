@@ -8,6 +8,7 @@ const fromMethod = Function.prototype.bind.bind(Function.prototype.call);
 const call = fromMethod(Function.prototype.call);
 
 const $Set = Set;
+const $add = fromMethod(Set.prototype.add);
 const $has = fromMethod(Set.prototype.has);
 const $values = fromMethod(Set.prototype.values);
 const $size = fromMethod(Object.getOwnPropertyDescriptor(Set.prototype, 'size').get);
@@ -17,7 +18,11 @@ const $iteratorNext = fromMethod(setIteratorPrototype.next);
 
 class FrozenSet {
   constructor(iterable) {
-    hidden(this, new $Set(iterable));
+    const set = new $Set();
+    for (const item of iterable) {
+      $add(set, item);
+    }
+    hidden(this, set);
   }
 
   has(value) {
