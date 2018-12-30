@@ -1,6 +1,6 @@
 {
   "name": "frozen-set",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Like Set, but without methods for mutation",
   "main": "index.js",
   "files": [
