@@ -1,6 +1,6 @@
 {
   "name": "frozen-set",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Like Set, but without methods for mutation",
   "homepage": "https://github.com/bakkot/frozen-set",
   "repository": {
