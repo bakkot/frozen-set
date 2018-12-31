@@ -66,8 +66,8 @@ class FrozenSet {
     }
   }
 }
-FrozenSet.prototype.keys = FrozenSet.prototype.values;
-FrozenSet.prototype[Symbol.iterator] = FrozenSet.prototype.values;
+Object.defineProperty(FrozenSet.prototype, 'keys', { value: FrozenSet.prototype.values, writable: true, enumerable: false, configurable: true });
+Object.defineProperty(FrozenSet.prototype, Symbol.iterator, { value: FrozenSet.prototype.values, writable: true, enumerable: false, configurable: true });
 Object.defineProperty(FrozenSet.prototype, Symbol.toStringTag, { value: 'FrozenSet', writable: false, enumerable: false, configurable: true });
 
 module.exports = FrozenSet;

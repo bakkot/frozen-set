@@ -70,6 +70,10 @@ function test(ctor) {
   assert(F.values === F[Symbol.iterator]);
 
   assert(F.toString() === '[object FrozenSet]');
+
+  for (const a in F) {
+    throw new Error('enumerable property ' + a);
+  }
 }
 
 
